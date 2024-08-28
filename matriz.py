@@ -250,12 +250,15 @@ def alguns_ois(quantidade):     #se quantidade for 4
 
 
 def varias_linhas(largura, altura):
-    lista=[]
+    matrix=[]
     for i in range(altura):
-        pass
+        linha=[]
+        for j in range(largura):
+            linha.append('.')
+        matrix.append(linha)
       #for
-    return [lista]
-    pass
+    return matrix
+    
 
 
 '''
@@ -296,7 +299,12 @@ def muitos_a(qtd):            #se qtd for 3
     return string             #devolvo "aaa"
 
 def mostra_lista(lista):
-    pass
+    string=''
+
+    for letra in lista:
+        string+=letra
+            
+    return string
 
 '''
 Crie uma funcao mostra_listas, que recebe uma de listas. Cada listinha 
@@ -319,8 +327,14 @@ Para colocar uma quebra de linha numa string, basta juntar '\n'. Ou seja, "banan
 
 
 def mostra_listas(lista_de_listas):
-    
-    pass
+    string_grande = ""
+    for lista in lista_de_listas:
+        string  = ""
+        for letra in lista:
+            string +=string + letra
+        string_grande += string
+        string_grande += '\n'
+    return string_grande
 
 
 '''
@@ -344,14 +358,14 @@ Então primeira_linha(mapa) devolve a lista ['.','b','.']
 '''
 
 def primeira_linha(mapa):
-    pass
+    return mapa[0]
 
 '''
 Implemente uma função linha_n. Ao chamar linha_n(mapa,3), pegamos, no mapa, a linha de índice 3 (lembre-se que essa é a quarta linha! A primeira tem indice 0, a segunda indice 1, a terceira indice 2)
 '''
 
 def linha_n(mapa,linha):
-    pass
+    return mapa[linha]
 
 '''
 Implemente um funcao posicao(mapa,x,y). Ao chamar posicao(mapa,x,y), pegamos, no mapa, a linha de índice x, e depois o elemento de indice y dessa linha
@@ -365,7 +379,7 @@ Ao chamarmos posicao(1,2), pegamos a linha de indice 1 (ou seja, ['b','c','d']) 
 '''
 
 def posicao(mapa,linha,coluna):
-    pass
+    return mapa[linha][coluna]
 
 '''
 Exercício 3d: Faremos uma função "coloca" para alterar o desenho. Suponha que começamos com
@@ -389,8 +403,8 @@ l3  .  .  .  .
 
 def coloca(mapa, n_linha, n_coluna, simbolo):
     
-    
-    pass
+    mapa[n_linha][n_coluna]=simbolo
+    return mapa
 
 
 '''
@@ -416,7 +430,9 @@ xxxx
 '''
 
 def marca_linha(mapa, n_linha, simbolo):
-    pass
+    for i in range(len(mapa)):
+        mapa[n_linha][i]=simbolo
+    return mapa
 
 '''
 Também podemos fazer uma função analoga chamada marca_coluna
@@ -438,7 +454,7 @@ Terei
 '''
 
 def marca_coluna(mapa, coluna, simbolo):
-    pass
+    for
 
 '''
 Façamos agora uma função que monta um tabuleiro de xadrez.

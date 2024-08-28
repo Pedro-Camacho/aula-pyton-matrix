@@ -13,12 +13,14 @@ def duas_linhas(largura):
     return lista
 
 def sete_linhas(largura):
-    lista=[]
+matriz = []
+    for i in range(7): # [0,1]
+        linha = []
+        for i in range(largura):
+            linha.append('.')
+        matriz.append(linha)
 
-    for i in range(7):
-        lista.append(linha(largura))
-
-    return lista
+    return matriz
 
 def algumas_linhas(largura, altura):
     lista=[]
